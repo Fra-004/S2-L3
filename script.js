@@ -133,13 +133,13 @@ console.log(nomi);
 let personaggiFemminili = [];
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
-    if (starWarsCharacters[i].gender === "female") {
-        let personaggio = {
+    if (starWarsCharacters[i].gender === 'female') {
+        let femminili = {
             name: starWarsCharacters[i].name,
             hair_color: starWarsCharacters[i].hair_color,
             eye_color: starWarsCharacters[i].eye_color
         };
-		personaggiFemminili.push(personaggio);
+		personaggiFemminili.push(femminili);
     }
 }
 
@@ -159,7 +159,6 @@ let perColoreOcchi = {
     "blue-gray": []
 };
 
-console.log(perColoreOcchi);
 /* ESERCIZIO 4 — Raggruppa per colore degli occhi
    For su starWarsCharacters + switch (character.eye_color).
    In ogni case fai push del personaggio nell'array giusto. Ricorda break.
@@ -167,6 +166,33 @@ console.log(perColoreOcchi);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+for (let i = 0; i < starWarsCharacters.length; i++) {
+    let character = starWarsCharacters[i];
+
+    switch (character.eye_color) {
+        case "blue":
+            perColoreOcchi.blue.push(character);
+            break;
+
+        case "yellow":
+            perColoreOcchi.yellow.push(character);
+            break;
+
+        case "brown":
+            perColoreOcchi.brown.push(character);
+            break;
+
+        case "red":
+            perColoreOcchi.red.push(character);
+            break;
+
+        case "blue-gray":
+            perColoreOcchi["blue-gray"].push(character);
+            break;
+    }
+}
+
+console.log(perColoreOcchi);
 
 /* ESERCIZIO 5 — Massa totale dell'equipaggio (while)
    i = 0, massaTotale = 0.
