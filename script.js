@@ -118,7 +118,7 @@ const starWarsCharacters = [
 let nomi = [];
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
-    nomi.push(starWarsCharacters[i].name);
+	nomi.push(starWarsCharacters[i].name);
 }
 
 console.log(nomi);
@@ -133,14 +133,13 @@ console.log(nomi);
 let personaggiFemminili = [];
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
-    if (starWarsCharacters[i].gender === 'female') {
-        let femminili = {
-            name: starWarsCharacters[i].name,
-            hair_color: starWarsCharacters[i].hair_color,
-            eye_color: starWarsCharacters[i].eye_color
-        };
-		personaggiFemminili.push(femminili);
-    }
+	if (starWarsCharacters[i].gender === 'female') {
+		personaggiFemminili.push({
+			name: starWarsCharacters[i].name,
+			hair_color: starWarsCharacters[i].hair_color,
+			eye_color: starWarsCharacters[i].eye_color
+		});
+	}
 }
 
 console.log(personaggiFemminili);
@@ -152,11 +151,11 @@ console.log(personaggiFemminili);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 let perColoreOcchi = {
-    blue: [],
-    yellow: [],
-    brown: [],
-    red: [],
-    "blue-gray": []
+	blue: [],
+	yellow: [],
+	brown: [],
+	red: [],
+	"blue-gray": []
 };
 
 /* ESERCIZIO 4 — Raggruppa per colore degli occhi
@@ -167,29 +166,29 @@ let perColoreOcchi = {
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 for (let i = 0; i < starWarsCharacters.length; i++) {
-    let character = starWarsCharacters[i];
+	let character = starWarsCharacters[i];
 
-    switch (character.eye_color) {
-        case "blue":
-            perColoreOcchi.blue.push(character);
-            break;
+	switch (character.eye_color) {
+		case "blue":
+			perColoreOcchi.blue.push(character);
+			break;
 
-        case "yellow":
-            perColoreOcchi.yellow.push(character);
-            break;
+		case "yellow":
+			perColoreOcchi.yellow.push(character);
+			break;
 
-        case "brown":
-            perColoreOcchi.brown.push(character);
-            break;
+		case "brown":
+			perColoreOcchi.brown.push(character);
+			break;
 
-        case "red":
-            perColoreOcchi.red.push(character);
-            break;
+		case "red":
+			perColoreOcchi.red.push(character);
+			break;
 
-        case "blue-gray":
-            perColoreOcchi["blue-gray"].push(character);
-            break;
-    }
+		case "blue-gray":
+			perColoreOcchi["blue-gray"].push(character);
+			break;
+	}
 }
 
 console.log(perColoreOcchi);
@@ -201,6 +200,14 @@ console.log(perColoreOcchi);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let massaTotale = 0;
+i = 0;
+while (i < starWarsCharacters.length) {
+	massaTotale = massaTotale + Number(starWarsCharacters[i].mass);
+	i++;
+
+}
+console.log(`la massa totale è =${massaTotale}`);
 
 /* ESERCIZIO 6 — Classifica il carico
    Su massaTotale, switch (true) o if/else if:
