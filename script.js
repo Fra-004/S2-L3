@@ -169,23 +169,23 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
 	let character = starWarsCharacters[i];
 
 	switch (character.eye_color) {
-		case "blue":
+		case 'blue':
 			perColoreOcchi.blue.push(character);
 			break;
 
-		case "yellow":
+		case 'yellow':
 			perColoreOcchi.yellow.push(character);
 			break;
 
-		case "brown":
+		case 'brown':
 			perColoreOcchi.brown.push(character);
 			break;
 
-		case "red":
+		case 'red':
 			perColoreOcchi.red.push(character);
 			break;
 
-		case "blue-gray":
+		case 'blue-gray':
 			perColoreOcchi["blue-gray"].push(character);
 			break;
 	}
@@ -201,10 +201,10 @@ console.log(perColoreOcchi);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 let massaTotale = 0;
-i = 0;
-while (i < starWarsCharacters.length) {
-	massaTotale = massaTotale + Number(starWarsCharacters[i].mass);
-	i++;
+j = 0;
+while (j < starWarsCharacters.length) {
+	massaTotale = massaTotale + Number(starWarsCharacters[j].mass);
+	j++;
 
 }
 console.log(`la massa totale è =${massaTotale}`);
@@ -219,6 +219,27 @@ console.log(`la massa totale è =${massaTotale}`);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+switch (true) {
+	case massaTotale < 500:
+	console.log('carico leggero');
+		break;
+
+	case massaTotale > 500 && massaTotale < 700:
+	console.log('carico medio');
+		break;
+
+	case massaTotale > 700 && massaTotale < 900:
+	console.log('attenzione: oltre 700');
+		break;
+
+	case massaTotale > 900 && massaTotale < 1000:
+	console.log('carico critico');
+		break;
+
+	case massaTotale > 1000:
+	console.log('PERICOLO: sovraccarico');
+		break;
+}
 
 /* ESERCIZIO 7 — Robotizza i n/a
    For: per ogni personaggio con gender === "n/a", cambialo in "robot".
@@ -226,6 +247,14 @@ console.log(`la massa totale è =${massaTotale}`);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+for(let i = 0; i<starWarsCharacters.length ; i++)
+{
+	if(starWarsCharacters[i].gender === 'n/a')
+	{
+		starWarsCharacters[i].gender = 'robot';
+		console.log(starWarsCharacters[i]);
+	}
+}
 
 /* ESERCIZIO 8 — Più alto e più basso
    For su starWarsCharacters. Trova il personaggio con altezza maggiore e quello con altezza minore.
